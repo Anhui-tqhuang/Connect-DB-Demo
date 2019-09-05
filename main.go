@@ -39,6 +39,7 @@ func main() {
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		glog.Error(err)
+		return
 	}
 
 	defer db.Close()
@@ -46,11 +47,13 @@ func main() {
 	_, err = db.Query("CREATE TABLE IF NOT EXISTS demo ()")
 	if err != nil {
 		glog.Error(err)
+		return
 	}
 
 	rows, err := db.Query("select tablename from pg_tables")
 	if err != nil {
 		glog.Error(err)
+		return
 	}
 	defer rows.Close()
 
@@ -60,6 +63,7 @@ func main() {
 		)
 		if err := rows.Scan(&tablename); err != nil {
 			glog.Error(err)
+			return
 		}
 		fmt.Printf("%s\n", tablename)
 	}
