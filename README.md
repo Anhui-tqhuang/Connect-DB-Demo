@@ -1,4 +1,4 @@
-# Connect-DB-Demo
+# Connect-DB-Demo [PG]
 
 I prefer to use IBM [CLI](https://github.com/IBM-Cloud/ibm-cloud-cli-release/releases/) to demo, of course, you could get all information that I will mention from instance dashboard.
 
