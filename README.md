@@ -17,11 +17,12 @@ for example:
 ```
 ibmcloud resource service-instance-create 'Databases for PostgreSQL dev-yp-02-zw' databases-for-postgresql standard us-south
 ```
+### Get connection string
 1. Once the database is done provisioning, you can get the credentials using the cloud-databases plugin. Install that using the following command
 ```
 ibmcloud plugin install cloud-databases
 ```
-4. Get ```hostname```, ```port```, ```sslmode```, ```database``` via cli and set them as environment variables,
+2. Get ```hostname```, ```port```, ```sslmode```, ```database``` via cli and set them as environment variables,
 ```
 ibmcloud cdb cxn 'Databases for PostgreSQL dev-yp-02-zw'
 
@@ -38,9 +39,9 @@ export PORT=30816
 export DATABASE=ibmclouddb
 export SSLMODE='verify-full'
 ```
-5. Set password for databases
+3. Set password for databases
 ```
-ibmcloud cdb deployment-user-password 'Databases for PostgreSQL dev-yp-02-zw' admin your_password
+ibmcloud cdb deployment-user-password 'Databases for PostgreSQL dev-yp-02-zw' admin <your_password>
 The user's password is being changed with this task:
 
 Key                   Value
@@ -60,14 +61,15 @@ OK
 export USERNAME=admin
 export PASSWORD=<your_password>
 ```
-6. You’ll also need to decode the CA certificate that your databases need for authentication. To decode it, run the following command then make sure to copy the decoded certificate and save it to a file on your system
+4. You’ll also need to decode the CA certificate that your databases need for authentication. To decode it, run the following command then make sure to copy the decoded certificate and save it to a file on your system
 ```
 ibmcloud cdb cacert 'Databases for PostgreSQL dev-yp-02-zw'
 ```
 ```
 export CAFILE=your_cafile_path
 ```
-7. Run it, and it will show all tables in this db
+### Test
+1. Run it, and it will show all tables in this db
 ```
 make run
 ```
