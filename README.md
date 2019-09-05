@@ -1,7 +1,6 @@
 # Connect-DB-Demo
-A demo dispaly how to connect to ibm cloud database instance via golang.
 
-I prefer to use IBM [CLI](https://github.com/IBM-Cloud/ibm-cloud-cli-release/releases/) to demo
+I prefer to use IBM [CLI](https://github.com/IBM-Cloud/ibm-cloud-cli-release/releases/) to demo, of course, you could get all information that I will mention from instance dashboard.
 
 ### Provision one instance 
 > skip this step if you already have one
